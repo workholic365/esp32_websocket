@@ -1,0 +1,73 @@
+menu "Example Configuration"
+
+config BLINK_GPIO
+    int "Blink GPIO number"
+	range 0 34
+	default 33
+	help
+		GPIO number (IOxx) to blink on and off.
+
+		Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+		GPIOs 35-39 are input-only so cannot be used as outputs.
+config ESP_WIFI_SSID
+    string "WiFi SSID"
+    default "esp32F"
+    help
+    SSID (network name) for the example to connect to.
+
+config ESP_WIFI_PASSWORD
+    string "WiFi Password"
+    default "esp32pwd"
+    help
+    WiFi password (WPA or WPA2) for the example to use.
+
+config ESP_MAX_STA_CONN
+    int "Maximal STA connections"
+    default 4
+    help
+    Max number of the STA connects to AP.
+config AP_SSID
+  string "Access Point SSID"
+  default "ESP32F2"
+  help
+    Name of access point that the ESP32 creates.
+
+config AP_PSSWD
+  string "Access Point Password"
+  default "esp32pwd"
+  help
+    Password of access point that the ESP32 creates.
+
+config CONFIG_WEBSOCKET_SERVER_TASK_PRIORITY
+  int "websocket server task priority"
+  default 5
+  help
+	websocket server task priority
+
+config CONFIG_WEBSOCKET_SERVER_MAX_CLIENTS
+  int "websocket server max clients"
+  default 20
+  help
+    websocket server max clients num
+
+config CONFIG_WEBSOCKET_SERVER_QUEUE_TIMEOUT
+  int "websocket server queue timeout"
+  default 30
+  help
+    websocket server queue timeout
+
+config CONFIG_WEBSOCKET_SERVER_TASK_STACK_DEPTH
+ int "websocket server task stack depth"
+  default 6000
+  help
+    websocket server task stack depth
+
+config CONFIG_WEBSOCKET_SERVER_QUEUE_SIZE
+  int "websocket server queue size"
+  default 10
+  help
+    websocket server queue size
+
+
+endmenu
