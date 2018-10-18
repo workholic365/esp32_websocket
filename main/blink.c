@@ -286,14 +286,14 @@ static void http_serve(struct netconn *conn) {
 				netconn_delete(conn);
 				netbuf_delete(inbuf);
 			}
-
+/*
 			// default page websocket
 			else if(strstr(buf,"GET / ")&& strstr(buf,"Upgrade: websocket")) {
 				ESP_LOGI(TAG,"Requesting websocket on /");
 				ws_server_add_client(conn,buf,buflen,"/",websocket_callback);
 				netbuf_delete(inbuf);
 			}
-
+*/
 			else if(strstr(buf,"GET /test.js ")) {
 				ESP_LOGI(TAG,"Sending /test.js");
 				netconn_write(conn, JS_HEADER, sizeof(JS_HEADER)-1,NETCONN_NOCOPY);
